@@ -22,9 +22,8 @@ spec:
           value: http://users-api:8083
         - name: ZIPKIN_URL
           value: http://zipkin:9411/api/v2/spans          
-        image: auth-api
+        image: indungu/microservice-todo-auth-api
         name: auth-api
         ports:
         - containerPort: 8081
-        imagePullPolicy: Never
       restartPolicy: Always

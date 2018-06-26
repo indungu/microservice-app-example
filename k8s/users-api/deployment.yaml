@@ -20,9 +20,8 @@ spec:
           value: "8083"
         - name: SPRING_ZIPKIN_BASE_URL
           value: http://zipkin:9411
-        image: users-api
+        image: indungu/microservice-todo-users-api
         name: users-api
         ports:
         - containerPort: 8083
-        imagePullPolicy: Never
       restartPolicy: Always
