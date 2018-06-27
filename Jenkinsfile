@@ -1,15 +1,9 @@
 pipeline {
-  agent none
+  agent any
   stages {
-    stage('Front-end') {
-      agent {
-        docker {
-          image 'node:7-alpine'
-        }
-
-      }
+    stage('build images') {
       steps {
-        sh 'ls -la'
+        sh 'docker-compose --version'
       }
     }
   }
