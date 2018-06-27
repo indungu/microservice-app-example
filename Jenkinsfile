@@ -6,9 +6,10 @@ pipeline {
         sh 'docker-compose build'
       }
     }
-    stage('upload images')
+    stage('upload images') {
       steps {
         sh 'docker-compose push'
       }
+    }
   }
 }
