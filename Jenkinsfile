@@ -8,9 +8,8 @@ node {
   }
 
   stage('login to dockerhub') {
-    withCredentials([string(credentialsId: 'DOCKER_USERNAME', variable: 'DOCKER_USERNAME')]) {
     withCredentials([string(credentialsId: 'DOCKER_PASSWORD', variable: 'DOCKER_PASSWORD')]) {
-      sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
+      sh 'docker login -u indungu -p ${DOCKER_PASSWORD}'
     }
   }
 
