@@ -8,8 +8,7 @@ pipeline {
     }
     stage('upload images') {
       steps {
-        sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-        sh 'docker-compose push'
+        sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker-compose push'
       }
     }
     stage('deploy') {
