@@ -12,6 +12,11 @@ pipeline {
 docker-compose push'''
       }
     }
+    stage('deploy app') {
+      steps {
+        sh 'kubectl apply -R -f k8s/'
+      }
+    }
   }
   environment {
     DOCKER_USERNAME = credentials("DOCKER_USERNAME")
