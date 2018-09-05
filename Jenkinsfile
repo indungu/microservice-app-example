@@ -6,11 +6,10 @@ pipeline {
         sh 'docker-compose build'
       }
     }
-  }
-  stage('upload images') {
+    stage('upload images') {
       steps {
-        sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-        sh 'docker-compose push'
+        sh '''docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+docker-compose push'''
       }
     }
   }
@@ -18,5 +17,4 @@ pipeline {
     DOCKER_USERNAME = credentials("DOCKER_USERNAME")
     DOCKER_PASSWORD = credentials("DOCKER_PASSWORD")
   }
-}
 }
